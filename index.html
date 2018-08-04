@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"/>
+  <link href="/regular_expression/index.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="container">
+<h3 class="text-center">Legalitas Chatbot</h3>
+<div class="messaging">
+      <div class="inbox_msg">
+        <div class="messgs" style="center">
+          <div class="msg_history">
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="/regular_expression/images/legalitas.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>Hola, soy el chatbot de Legalitas Abogados. Escoge uno de los siguientes temas.</p>
+                  </br>
+                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" style="background: #ebebeb">
+                      <div class="carousel-item active">
+                        <img id="suelo_btn" onclick="chooseTopic(this);" class="d-block w-100" src="/regular_expression/images/safe_image.php.jpg" alt="Hipoteca">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Clausula Suelo</h5>
+                          <p class="card-text">Consulta relacionada con clausula suelo y gastos de la hipoteca.</p>
+                          <button id="suelo_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="/regular_expression/images/divorcio_image.php.jpg" alt="Divorcio">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Divorcio</h5>
+                          <p class="card-text">Separacion, custodia, pension, hijos, regimen economico, convenio regulador.</p>
+                          <button id="divorcio_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="divorcio_btn" onclick="chooseTopic(this);" class="d-block w-100" src="/regular_expression/images/vivienda_image.php.jpg" alt="Vivienda">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Vivienda</h5>
+                          <p class="card-text">Alquileres, reclamacion de rentas, compraventa, contratos...</p>
+                          <button id="vivienda_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="accidente_btn" onclick="chooseTopic(this);" class="d-block w-100" src="/regular_expression/images/accidente_image.php.jpg" alt="Accidente">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Accidente</h5>
+                          <p class="card-text">Accidente de trafico, laborales, calculo de indemnizaciones, negozaciones.</p>
+                          <button id="accidente_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="despido_btn" onclick="chooseTopic(this);" class="d-block w-100" src="/regular_expression/images/despido_image.php.jpg" alt="Despido">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Despido</h5>
+                          <p class="card-text">Carta de despido, finiquito, reclamaciones, Mobbing.</p>
+                          <button id="despido_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="consumo_btn" onclick="chooseTopic(this);" class="d-block w-100" src="/regular_expression/images/consumo_image.php.jpg" alt="Consumo">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Consumo</h5>
+                          <p class="card-text">Clausulas abusivas, cargos no autorizados, compras en Internet, contrataciones.</p>
+                          <button id="consumo_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="alcoholemia_btn" onclick="chooseTopic(this);" class="d-block w-100" src="/regular_expression/images/alcoholemia_image.php.jpg" alt="Alcoholemia">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Alcoholemia</h5>
+                          <p class="card-text">Juicio rapido por alcoholemia, multas, sanciones, como recurrir en via penal.</p>
+                          <button id="alcoholemia_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="otras_btn" onclick="chooseTopic(this);" class="d-block w-100" src="/regular_expression/images/otras_image.php.jpg" alt="Otros">
+                        <div class="carousel-caption d-none d-md-block" style="position: unset">
+                          <h5 class="card-title" style="color: black">Otras Consultas</h5>
+                          <p class="card-text">Robo de identidad, Ciberbulling, Imagen en Internet, Pymes y autonomos.</p>
+                          <button id="otras_btn" onclick="chooseTopic(this);" type="button" class="btn btn-primary">Elegir</button>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Siguiente</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Anterior</span>
+                    </a>
+                  </div>
+                  <span class="time_date"> 11:01 AM    |    June 9</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="type_msg">
+            <div class="row">
+              <div class="col-11">
+                <div class="input_msg_write">
+                  <input id="msg_write" type="text" class="write_msg" placeholder="Escribir pregunta" />
+                </div>
+              </div>
+              <div class="col-1 msg_send_btn_plane">
+                <button id="msg_btn" class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+      <p class="text-center top_spac"> Design by <a target="_blank" href="#">I@n & @le</a></p>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+  <script>
+    var cadena;
+    var tener = RegExp("(TIENE|TIENES|TENGO|TENES)");
+    var edad = RegExp("AÑOS|EDAD");
+
+    var loading = `<div id="spinner" class="incoming_msg"><div class="incoming_msg_img"> <img src="/regular_expression/legalitas.png" alt="sunil"> </div><div class="received_msg"><div class="received_withd_msg"><svg width="30px"  height="30px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ellipsis" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="10;0;0;0;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="84;84;84;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-1.5s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-1.5s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-0.75s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-0.75s"></animate></circle><circle cx="16" cy="50" r="10" fill="#0084ff"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;0;10;10;10" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="16;16;16;50;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle></svg></div></div>`
+
+    function scrollBottom() {
+      var height = $('.msg_history').height();
+      $('.msg_history').animate({scrollTop:height+"px"});
+    }
+
+    function evaluarEdad(text) {
+      var cadena = text.toUpperCase();
+      var response;
+
+      if (tener.test(cadena) && edad.test(cadena)) {
+        var text = 'Yo tengo 27 años';
+        response = `<div class="incoming_msg">
+          <div class="incoming_msg_img"> <img src="/regular_expression/images/legalitas.png" alt="sunil"> </div>
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>`+text+`</p>
+              <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+          </div>
+        </div>`
+        $('#spinner').remove();
+        $('.msg_history').append(response);
+        scrollBottom();
+      }
+    }
+
+    function writeOutgoingMessage(text) {
+      var message = '<div class="outgoing_msg"><div class="sent_msg"><p>'+text+'</p><span class="time_date"> 11:01 AM    |    Today</span> </div></div>'
+      $('.msg_history').append(message);
+      $('.msg_history').append(loading);
+      scrollBottom();
+    }
+
+    $('#msg_btn').on('click', function (obj){
+      var text = $('#msg_write').val();
+      if (text!="") {
+        $('#msg_write').val("");
+        writeOutgoingMessage(text);
+        $('#msg_btn').delay(2000).queue(function(){
+          evaluarEdad(text);
+          $(this).dequeue();
+        });
+      }
+      else{
+        alert('vacio');
+      }
+    });
+
+    function chooseTopic(obj) {
+      var id = obj.attributes.id.value;
+      if (id == 'suelo_btn') {
+        alert('Suelo');
+      } else if (id == 'divorcio_btn') {
+        alert('Divorcio');
+      } else if (id == 'vivienda_btn') {
+        alert('Vivienda');
+      } else if (id == 'accidente_btn') {
+        alert('Accidente');
+      } else if (id == 'despido_btn') {
+        alert('Despido');
+      } else if (id == 'consumo_btn') {
+        alert('Consumo');
+      } else if (id == 'alcoholemia_btn') {
+        alert('Alcoholemia');
+      } else if (id == 'otras_btn') {
+        alert('Otras');
+      }
+    }
+
+  </script>
+
+  </body>
+</html>
