@@ -106,7 +106,7 @@
             <div class="row">
               <div class="col-11">
                 <div class="input_msg_write">
-                  <input id="msg_write" type="text" class="write_msg" placeholder="Escribir pregunta" />
+                  <input id="msg_write" type="text" class="write_msg" onkeypress="return runScript(event)" placeholder="Escribir pregunta" />
                 </div>
               </div>
               <div class="col-1 msg_send_btn_plane">
@@ -132,7 +132,7 @@
     var tener = RegExp("(TIENE|TIENES|TENGO|TENES)");
     var edad = RegExp("AÑOS|EDAD");
 
-    var loading = `<div id="spinner" class="incoming_msg"><div class="incoming_msg_img"> <img src="/regular_expression/legalitas.png" alt="sunil"> </div><div class="received_msg"><div class="received_withd_msg"><svg width="30px"  height="30px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ellipsis" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="10;0;0;0;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="84;84;84;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-1.5s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-1.5s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-0.75s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-0.75s"></animate></circle><circle cx="16" cy="50" r="10" fill="#0084ff"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;0;10;10;10" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="16;16;16;50;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle></svg></div></div>`
+    var loading = `<div id="spinner" class="incoming_msg"><div class="incoming_msg_img"> <img src="/regular_expression/images/legalitas.png" alt="sunil"> </div><div class="received_msg"><div class="received_withd_msg"><svg width="30px"  height="30px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ellipsis" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="10;0;0;0;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="84;84;84;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-1.5s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-1.5s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-0.75s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="-0.75s"></animate></circle><circle cx="16" cy="50" r="10" fill="#0084ff"><animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle><circle cx="16" cy="50" r="10" fill="rgb(0, 132, 255)"><animate attributeName="r" values="0;0;10;10;10" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="cx" values="16;16;16;50;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="3s" repeatCount="indefinite" begin="0s"></animate></circle></svg></div></div>`
 
     function scrollBottom() {
       var height = $('.msg_history').height();
@@ -199,6 +199,23 @@
         alert('Alcoholemia');
       } else if (id == 'otras_btn') {
         alert('Otras');
+      }
+    }
+
+    function runScript(e) {
+      if (e.keyCode == 13) {
+        var text = $('#msg_write').val();
+        if (text!="") {
+          $('#msg_write').val("");
+          writeOutgoingMessage(text);
+          $('#msg_btn').delay(2000).queue(function(){
+            evaluarEdad(text);
+            $(this).dequeue();
+          });
+        }
+        else{
+          alert('vacio');
+        }
       }
     }
 
